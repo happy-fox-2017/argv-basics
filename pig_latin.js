@@ -28,5 +28,5 @@ let convert = (sentence) => {
 let arg = process.argv.slice(2).join(' ');
 // console.log(arg);
 
-console.log(pigLatin(arg));
+console.log(convert(arg));
 
