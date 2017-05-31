@@ -24,3 +24,6 @@ let convert = (sentence) => {
 }
 
 // Your CLI code here
+
+const words = process.argv.slice(2);
+console.log(convert(words.join(' ')));
