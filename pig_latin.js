@@ -24,3 +24,9 @@ let convert = (sentence) => {
 }
 
 // Your CLI code here
+let argv = process.argv
+if(argv[3]== undefined){
+  console.log(convert(argv[2]));
+} else{
+  console.log(convert(argv[2]+ " "+argv[3]))
+}
