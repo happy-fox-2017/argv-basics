@@ -10,7 +10,7 @@ let pigLatin = (word) => {
 }
 
 let isPowel = (char) => {
-  return (/^[aeiou]$/i).test(char);
+  return (/[aeiou]/i).test(char);
 }
 
 let convert = (sentence) => {
@@ -24,3 +24,9 @@ let convert = (sentence) => {
 }
 
 // Your CLI code here
+
+let arg = process.argv.slice(2).join(' ');
+// console.log(arg);
+
+console.log(convert(arg));
+
