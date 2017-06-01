@@ -1,26 +1,18 @@
 'use strict'
 
-let pigLatin = (word) => {
-  let firstLetter = word.charAt(0);
-  if(isPowel(firstLetter)){
-    return word
-  }else{
-    return `${word.substr(1)}${firstLetter}ay`;
+let index = process.argv.slice(2);
+
+function pigLatin(word) {
+  let pigLatin = [];
+  for (let i = 0 ; i < word.length ; i++){
+    if (/^[aiueo]/.test(word[i])){
+        pigLatin.push(word[i]);
+    }else {
+      pigLatin.push(word[i].replace(/([^aiueo]+)([a-zA-Z0-9]+)/, '$2$1ay'));
+    }
   }
-}
-
-let isPowel = (char) => {
-  return (/^[aeiou]$/i).test(char);
-}
-
-let convert = (sentence) => {
-  let result = []
-  let words = sentence.trim().split(/\s+/g)
-  for (let i=0;i<words.length;i++) {
-    result[i] = pigLatin(words[i])
-  }
-
-  return result.join(" ")
+  return pigLatin.join(' ');
 }
 
 // Your CLI code here
+console.log(pigLatin(index));
